@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://s24fdnwxjrxo"]
+
+[ext_resource type="Texture2D" uid="uid://cqoyaxtfuqwjy" path="res://icon.svg" id="1_rvslj"]
+[ext_resource type="Script" uid="uid://dc86dy5w367fv" path="res://scripts/tile_map_layer.gd" id="2_0bbpv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rarhs"]
+texture = ExtResource("1_rvslj")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vcsgt"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_rarhs")
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_vcsgt")
+script = ExtResource("2_0bbpv")
